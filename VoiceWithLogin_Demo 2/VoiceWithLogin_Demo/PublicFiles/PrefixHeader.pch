@@ -1,0 +1,46 @@
+//
+//  PrefixHeader.pch
+//  VoiceWithLogin_Demo
+//
+//  Created by ljm on 2017/10/12.
+//  Copyright © 2017年 com.ynyx. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "LJMLoginViewController.h"
+#import "ViewController.h"
+
+#import "LJMGlobalValues.h"
+
+#import <iflyMSC/IFlyMSC.h>
+#import <iflyMSC/IFlySpeechUtility.h>
+#import <iflyMSC/IFlySpeechRecognizer.h>
+
+
+/** 屏幕的宽 高 **/
+#define kselfWidth [UIScreen mainScreen].bounds.size.width
+#define kselfHeight [UIScreen mainScreen].bounds.size.height
+
+
+// RGB颜色宏
+#define RGBColor(r , g , b , alph) [UIColor colorWithRed:(r) / 255.0 green:(g) / 255.0 blue:(b) / 255.0 alpha:(alph) / 1.0]
+
+// 打印方法
+#define SLFunc SLLog(@"%s",__func__);
+// 自定义LOG
+#ifdef DEBUG // 调试阶段
+
+#define SLLog(...) NSLog(__VA_ARGS__);
+
+#else // 发布阶段
+
+#define SLLog(...)
+
+#endif
+
+#endif /* PrefixHeader_pch */
