@@ -45,18 +45,14 @@
     [super viewWillAppear:animated];
 
     [self setupWithSpeak];
-
     [_iFlySpeechSynthesizer startSpeaking:@"请输入账号和密码"];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
     self.view.backgroundColor = [UIColor whiteColor];
-
     [self setupUI];
-
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -230,7 +226,6 @@
         [NSThread sleepForTimeInterval:2.9];
         isAccount = YES;
         isPassword = NO;
-        accountF.text = @"";
         [accountF resignFirstResponder];
 
     }else if (textField == passwordF)
@@ -239,8 +234,6 @@
         [NSThread sleepForTimeInterval:2.9];
         isPassword = YES;
         isAccount = NO;
-        passwordF.text = @"";
-        //        [passwordF resignFirstResponder];
     }
     if(_iFlyRecognizerView == nil)
     {
@@ -249,14 +242,12 @@
 
     //设置音频来源为麦克风
     [_iFlyRecognizerView setParameter:IFLY_AUDIO_SOURCE_MIC forKey:@"audio_source"];
-
     //设置听写结果格式为json
     [_iFlyRecognizerView setParameter:@"plain" forKey:[IFlySpeechConstant RESULT_TYPE]];
 
     //保存录音文件，保存在sdk工作路径中，如未设置工作路径，则默认保存在library/cache下
     //        [_iFlyRecognizerView setParameter:@"asr.pcm" forKey:[IFlySpeechConstant ASR_AUDIO_PATH]];
     [_iFlyRecognizerView start];
-//    [self performSelector:@selector(voiceWithJudge) withObject:self afterDelay:3.5f];
 }
 
 #pragma mark -- 语音识别返回结果
