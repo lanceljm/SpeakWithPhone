@@ -16,6 +16,7 @@
 #import "ViewController.h"
 
 #import "LJMGlobalValues.h"
+#import "IATConfig.h"
 
 #import <iflyMSC/IFlyMSC.h>
 #import <iflyMSC/IFlySpeechUtility.h>

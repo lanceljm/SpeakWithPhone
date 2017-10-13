@@ -30,6 +30,7 @@
 		1A6420B01F8F1B7500C93FBF /* LJMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6420AF1F8F1B7500C93FBF /* LJMLoginViewController.m */; };
 		1A6420B51F8F40DF00C93FBF /* LJMGlobalValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6420B41F8F40DF00C93FBF /* LJMGlobalValues.m */; };
 		1A64213F1F8F44CE00C93FBF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A64213E1F8F44CE00C93FBF /* libz.tbd */; };
+		1AF61D2B1F905B8E00607A2D /* IATConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF61D2A1F905B8E00607A2D /* IATConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,8 @@
 		1A6420B31F8F40DF00C93FBF /* LJMGlobalValues.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJMGlobalValues.h; sourceTree = "<group>"; };
 		1A6420B41F8F40DF00C93FBF /* LJMGlobalValues.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJMGlobalValues.m; sourceTree = "<group>"; };
 		1A64213E1F8F44CE00C93FBF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		1AF61D291F905B8E00607A2D /* IATConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IATConfig.h; sourceTree = "<group>"; };
+		1AF61D2A1F905B8E00607A2D /* IATConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IATConfig.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,8 @@
 			children = (
 				1A6420931F8F194200C93FBF /* AppDelegate.h */,
 				1A6420941F8F194200C93FBF /* AppDelegate.m */,
+				1AF61D291F905B8E00607A2D /* IATConfig.h */,
+				1AF61D2A1F905B8E00607A2D /* IATConfig.m */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AF61D2B1F905B8E00607A2D /* IATConfig.m in Sources */,
 				1A6420981F8F194200C93FBF /* ViewController.m in Sources */,
 				1A6420A31F8F194200C93FBF /* main.m in Sources */,
 				1A6420B01F8F1B7500C93FBF /* LJMLoginViewController.m in Sources */,
