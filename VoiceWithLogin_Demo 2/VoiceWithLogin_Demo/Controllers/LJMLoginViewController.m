@@ -13,12 +13,6 @@
     UITextField *accountF;
     UITextField *passwordF;
     UIButton    *loginBtn;
-    
-    NSTimer *accountTimer;
-    NSTimer *passwordTimer;
-    
-    NSArray *accountArr;
-    NSArray *passwordArr;
 }
 
 /** 语音合成 **/
@@ -44,8 +38,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self setupUI];
-    
-//    [self setupWithSpeak];
     
 }
 
