@@ -198,9 +198,11 @@
         [_iFlySpeechSynthesizer startSpeaking: @"请注意密码不能为空"];
     }else
     {
-        [_iFlySpeechSynthesizer startSpeaking: @"你好，我是远信的小红坤，欢迎登录后勤服务"];
+        [_iFlySpeechSynthesizer startSpeaking: @"你好，我是远信的siri，欢迎登录后勤服务"];
 
-        ViewController *vc = [[ViewController alloc] init];
+        UIViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController"];
+
+//        ViewController *vc = [[ViewController alloc] init];
         [self presentViewController:vc animated:YES completion:nil];
     }
     //
@@ -226,8 +228,6 @@
         [NSThread sleepForTimeInterval:2.9];
         isAccount = YES;
         isPassword = NO;
-        [accountF resignFirstResponder];
-
     }else if (textField == passwordF)
     {
         [_iFlySpeechSynthesizer startSpeaking:@"请输入密码"];
@@ -235,6 +235,7 @@
         isPassword = YES;
         isAccount = NO;
     }
+    
     if(_iFlyRecognizerView == nil)
     {
         [self setupWithRecognizer ];

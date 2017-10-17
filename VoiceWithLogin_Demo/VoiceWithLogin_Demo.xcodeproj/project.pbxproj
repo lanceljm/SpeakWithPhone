@@ -188,8 +188,8 @@
 			children = (
 				1A6420AE1F8F1B7500C93FBF /* LJMLoginViewController.h */,
 				1A6420AF1F8F1B7500C93FBF /* LJMLoginViewController.m */,
-				1A6420971F8F194200C93FBF /* ViewController.m */,
 				1A6420961F8F194200C93FBF /* ViewController.h */,
+				1A6420971F8F194200C93FBF /* ViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
