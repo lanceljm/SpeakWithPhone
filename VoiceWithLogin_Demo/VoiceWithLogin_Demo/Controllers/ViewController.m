@@ -8,7 +8,15 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()<UITextFieldDelegate,IFlySpeechSynthesizerDelegate,IFlyRecognizerViewDelegate,IFlyPcmRecorderDelegate,UITextViewDelegate>
+static CGFloat textfiledWithCornerRadius     =    3.f;
+static CGFloat textfieldWithLineWidth          =    1.f;
+static CGFloat textViewWithLineWidth         =    2.f;
+
+@interface ViewController ()<UITextFieldDelegate,
+                                            IFlySpeechSynthesizerDelegate,
+                                            IFlyRecognizerViewDelegate,
+                                            IFlyPcmRecorderDelegate,
+                                            UITextViewDelegate>
 {
     BOOL isTableNumberF;
     BOOL isProposerNameF;
@@ -95,13 +103,13 @@
 
     _contentView.delegate = self;
 
-    _tableNumberF.layer.cornerRadius          =     3;
+    _tableNumberF.layer.cornerRadius          =     textfiledWithCornerRadius;
     _proposerNameF.layer.cornerRadius        =     _tableNumberF.layer.cornerRadius;
     _telephoneNumberF.layer.cornerRadius    =    _tableNumberF.layer.cornerRadius;
     _destionationF.layer.cornerRadius            =    _tableNumberF.layer.cornerRadius;
     _timeF.layer.cornerRadius                       =    _tableNumberF.layer.cornerRadius;
 
-    _tableNumberF.layer.borderWidth         =    1;
+    _tableNumberF.layer.borderWidth         =    textfieldWithLineWidth;
     _proposerNameF.layer.borderWidth        =    _tableNumberF.layer.borderWidth;
     _telephoneNumberF.layer.borderWidth     =   _tableNumberF.layer.borderWidth;
     _destionationF.layer.borderWidth             =   _tableNumberF.layer.borderWidth;
@@ -113,7 +121,7 @@
     _destionationF.layer.borderColor             =   _tableNumberF.layer.borderColor;
     _timeF.layer.borderColor                        =   _tableNumberF.layer.borderColor;
 
-    _contentView.layer.borderWidth = 1;
+    _contentView.layer.borderWidth = textViewWithLineWidth;
     _contentView.text = nil;
     _contentView.layer.borderColor = [UIColor lightGrayColor].CGColor;
 
@@ -149,7 +157,52 @@
     [_iFlySpeechSynthesizer setParameter:@"50"
                                   forKey: [IFlySpeechConstant VOLUME]];
     //发音人，默认为”xiaoyan”，可以设置的参数列表可参考“合成发音人列表”
-    [_iFlySpeechSynthesizer setParameter:@" xiaoyan "
+
+    /*
+     *  云端支持如下发音人：
+     *  对于网络TTS的发音人角色，不同引擎类型支持的发音人不同，使用中请注意选择。
+     *
+     *  |--------|----------------|
+     *  |  发音人 |  参数          |
+     *  |--------|----------------|
+     *  |  小燕   |   xiaoyan     |
+     *  |--------|----------------|
+     *  |  小宇   |   xiaoyu      |
+     *  |--------|----------------|
+     *  |  凯瑟琳 |   catherine   |
+     *  |--------|----------------|
+     *  |  亨利   |   henry       |
+     *  |--------|----------------|
+     *  |  玛丽   |   vimary      |
+     *  |--------|----------------|
+     *  |  小研   |   vixy        |
+     *  |--------|----------------|
+     *  |  小琪   |   vixq        |
+     *  |--------|----------------|
+     *  |  小峰   |   vixf        |
+     *  |--------|----------------|
+     *  |  小梅   |   vixl        |
+     *  |--------|----------------|
+     *  |  小莉   |   vixq        |
+     *  |--------|----------------|
+     *  |  小蓉   |   vixr        |
+     *  |--------|----------------|
+     *  |  小芸   |   vixyun      |
+     *  |--------|----------------|
+     *  |  小坤   |   vixk        |
+     *  |--------|----------------|
+     *  |  小强   |   vixqa       |
+     *  |--------|----------------|
+     *  |  小莹   |   vixyin      |
+     *  |--------|----------------|
+     *  |  小新   |   vixx        |
+     *  |--------|----------------|
+     *  |  楠楠   |   vinn        |
+     *  |--------|----------------|
+     *  |  老孙   |   vils        |
+     *  |--------|----------------|
+     */
+    [_iFlySpeechSynthesizer setParameter:@" vixr "
                                   forKey: [IFlySpeechConstant VOICE_NAME]];
     //保存合成文件名，如不再需要，设置为nil或者为空表示取消，默认目录位于library/cache下
     [_iFlySpeechSynthesizer setParameter:@" tts.pcm"
